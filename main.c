@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/11 15:56:25 by ravard            #+#    #+#             */
-/*   Updated: 2016/07/13 21:46:12 by ravard           ###   ########.fr       */
+/*   Updated: 2016/07/13 23:59:44 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void		ft_print_usage(void)
 	str[3] = "./fractol 2 -> tricorn\n";
 	str[4] = "./fractol 3 -> julia\n";
 	str[5] = "Il est possible de lancer deux fenetres en meme temps\n";
-	str[6] = "NB: utiliser la fenetre 1 pour faire varier le param de julia\n";
+	str[6] = "Utiliser la fenetre 1 pour faire varier le param de julia\n";
 	i = -1;
 	while (++i < 7)
 		ft_putstr(str[i]);
