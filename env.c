@@ -92,16 +92,16 @@ void					mouse_m_a_j(int button, t_env *e)
 
 void					key_m_a_j(int keycode, t_env *e)
 {
-	if (keycode == 53)
+	if (keycode == EXIT)
 		leave_properly(e);
-	else if (keycode == 49)
+	else if (keycode == REBOOT)
 		standard_env(e);
-	else if (keycode == 123 || keycode == 124 ||
-			keycode == 125 || keycode == 126)
+	else if (keycode == G || keycode == D ||
+			keycode == B || keycode == H)
 		moove_img(e, keycode);
-	else if (keycode == 9)
+	else if (keycode == 118)
 		e->julia_var_up = (e->julia_var_up == 1) ? 0 : 1;
-	else if (keycode == 24 || (keycode == 27 && e->zoom != 0))
+	else if (keycode == ZOOM || (keycode == DEZOOM && e->zoom != 0))
 	{
 		e->y_mid = e->y_min + e->y_scale / IMAGE_Y *
 			pixel_coord_in_img(e, e->ptr_pos[1], e->ptr_pos[0])[0];
@@ -111,9 +111,9 @@ void					key_m_a_j(int keycode, t_env *e)
 		e->img_pos[1] = 3;
 		e->decal[0] = IMAGE_Y / 6 - e->ptr_pos[0];
 		e->decal[1] = IMAGE_X / 6 - e->ptr_pos[1];
-		if (keycode == 27)
+		if (keycode == DEZOOM)
 			e->zoom--;
-		if (keycode == 24)
+		if (keycode == ZOOM)
 			e->zoom++;
 		new_env(e);
 	}

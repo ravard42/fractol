@@ -1,9 +1,9 @@
-kernel void		tricorn(global double *env, global int *couleur)
+kernel void		tricorn(global float *env, global int *couleur)
 {
 	int			pixel;
-	double2		c;
-	double2		z;
-	double		tmp;
+	float2		c;
+	float2		z;
+	float		tmp;
 	int			i;
 
 	pixel = get_global_id(0);

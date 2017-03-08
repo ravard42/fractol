@@ -14,11 +14,11 @@
 
 void			host(t_env *e)
 {
-	double		*env;
+	float		*env;
 	int			*couleur;
 	size_t		i;
 
-	env = (double *)malloc(sizeof(double) * 9);
+	env = (float *)malloc(sizeof(float) * 9);
 	env[0] = e->y_min;
 	env[1] = e->y_max;
 	env[2] = e->x_min;

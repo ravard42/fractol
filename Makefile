@@ -12,8 +12,13 @@ SRC =	main.c\
 		color.c\
 
 OBJ = $(SRC:.c=.o)
-INCLUDE = ./includes
-LIB = -L ./libft -lft -lmlx -framework OpenGL -framework AppKit -framework OpenCL
+
+#INCLUDE = ./includes
+#LIB = -L ./libft -lft -lmlx -framework OpenGL -framework AppKit -framework OpenCL
+
+INCLUDE = ./includes -I /usr/X11/include
+LIB = -L ./libft -lft -L /usr/X11/lib -lmlx -lXext -lX11 -framework OpenCL
+
 
 all: $(NAME)
 

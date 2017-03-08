@@ -12,6 +12,35 @@
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
+
+
+
+
+# define H 119
+# define B 115
+# define D 100
+# define G 97
+# define REBOOT 32
+# define ZOOM 61
+# define DEZOOM 45
+# define VAR	118
+# define EXIT 65307
+
+/*
+# define H 13
+# define B 1
+# define D 2
+# define G 0
+# define REBOOT 49
+# define ZOOM
+# define DEZOOM
+# define VAR
+# define EXIT 53
+*/
+
+
+
+
 # define IMAGE_X 3000
 # define IMAGE_Y 3000
 # define IT_MAX  320
@@ -85,7 +114,7 @@ char				*load_kernel_source(int i);
 cl_kernel			load_kernel(cl_program program, int i);
 
 void				init_cl(t_env *e);
-void				run_cl(double *env, int *couleur, t_env *e);
+void				run_cl(float *env, int *couleur, t_env *e);
 void				release_cl(t_cl *cl);
 
 void				host(t_env *e);

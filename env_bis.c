@@ -14,13 +14,13 @@
 
 void					moove_img(t_env *e, int keycode)
 {
-	if (keycode == 126 && e->img_pos[0] != 0)
+	if (keycode == H && e->img_pos[0] != 0)
 		e->img_pos[0]--;
-	else if (keycode == 125 && e->img_pos[0] != 6)
+	else if (keycode == B && e->img_pos[0] != 6)
 		e->img_pos[0]++;
-	else if (keycode == 123 && e->img_pos[1] != 0)
+	else if (keycode == G && e->img_pos[1] != 0)
 		e->img_pos[1]--;
-	else if (keycode == 124 && e->img_pos[1] != 6)
+	else if (keycode == D && e->img_pos[1] != 6)
 		e->img_pos[1]++;
 }
 

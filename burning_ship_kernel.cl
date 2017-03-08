@@ -1,9 +1,9 @@
-kernel void		burning_ship(global double *env, global int *couleur)
+kernel void		burning_ship(global float *env, global int *couleur)
 {
 	int			pixel;
-	double2		c;
-	double2		z;
-	double		tmp;
+	float2		c;
+	float2		z;
+	float		tmp;
 	int			i;
 
 	pixel = get_global_id(0);

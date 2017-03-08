@@ -56,17 +56,17 @@ void			init_cl(t_env *e)
 	clBuildProgram(program, 0, NULL, NULL, NULL, NULL);
 	e->cl->kernel = load_kernel(program, e->which_fract);
 	e->cl->env_cl_mem = clCreateBuffer(e->cl->context,
-			CL_MEM_READ_ONLY, 9 * sizeof(double), NULL, NULL);
+			CL_MEM_READ_ONLY, 9 * sizeof(float), NULL, NULL);
 	e->cl->gws = IMAGE_X * IMAGE_Y;
 	e->cl->couleur_cl_mem = clCreateBuffer(e->cl->context,
 			CL_MEM_READ_WRITE, e->cl->gws * sizeof(int), NULL, NULL);
 	clFinish(e->cl->cmd_queue);
 }
 
-void			run_cl(double *env, int *couleur, t_env *e)
+void			run_cl(float *env, int *couleur, t_env *e)
 {
 	clEnqueueWriteBuffer(e->cl->cmd_queue, e->cl->env_cl_mem,
-			CL_TRUE, 0, 9 * sizeof(double), (void *)env, 0, NULL, NULL);
+			CL_TRUE, 0, 9 * sizeof(float), (void *)env, 0, NULL, NULL);
 	clFinish(e->cl->cmd_queue);
 	clSetKernelArg(e->cl->kernel, 0, sizeof(cl_mem), &e->cl->env_cl_mem);
 	clSetKernelArg(e->cl->kernel, 1, sizeof(cl_mem), &e->cl->couleur_cl_mem);
